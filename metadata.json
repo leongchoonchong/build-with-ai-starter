@@ -1,0 +1,6 @@
+{
+  "name": "Financial Terminal",
+  "description": "High-density institutional financial terminal with real-time charting, interactive Level-2 order book, multi-asset screener, and portfolio execution.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

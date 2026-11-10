@@ -1,0 +1,80 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --color-surface: #faf8ff;
+    --color-surface-container: #eaedfd;
+    --color-surface-container-high: #e5e7f7;
+    --color-surface-subtle: #f0f3fa;
+    --color-surface-muted: #e0e3eb;
+    --color-text-primary: #131722;
+    --color-text-secondary: #787b86;
+    --color-primary: #2962ff;
+    --color-market-up: #089981;
+    --color-market-down: #f23645;
+    --color-border-grid: #e0e3eb;
+  }
+
+  .dark {
+    --color-surface: #0e1118;
+    --color-surface-container: #161b26;
+    --color-surface-container-high: #1c2230;
+    --color-surface-subtle: #131722;
+    --color-surface-muted: #242938;
+    --color-text-primary: #eaedfd;
+    --color-text-secondary: #868c9e;
+    --color-primary: #2962ff;
+    --color-market-up: #089981;
+    --color-market-down: #f23645;
+    --color-border-grid: #242938;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-feature-settings: "tnum" 1, "cv02" 1, "cv03" 1, "cv04" 1;
+  }
+
+  .font-mono-tabular {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom slick financial scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(140, 150, 175, 0.25);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 150, 175, 0.45);
+}
+
+/* Flash animation for live price updates */
+@keyframes flash-green {
+  0% { background-color: rgba(8, 153, 129, 0.35); }
+  100% { background-color: transparent; }
+}
+
+@keyframes flash-red {
+  0% { background-color: rgba(242, 54, 69, 0.35); }
+  100% { background-color: transparent; }
+}
+
+.flash-up {
+  animation: flash-green 1s ease-out;
+}
+
+.flash-down {
+  animation: flash-red 1s ease-out;
+}
